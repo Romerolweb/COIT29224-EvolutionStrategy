@@ -1,6 +1,11 @@
 import logging
 from datetime import datetime
 import os
+import es_optimiser
+import numpy as np
+from es_optimiser.evolution_strategy import EvolutionStrategy
+from es_optimiser.objective_functions import rastrigin
+from es_optimiser.plot import plot_convergence, plot_rastrigin_2d_landscape
 
 # Configure logging
 log_filename = "es_optimization.log"
@@ -53,7 +58,7 @@ if __name__ == "__main__":
     es_optimizer.run()  # Execute the optimization
 
     # --- Retrieve Results ---
-    best_found: Individual = es_optimizer.get_best_solution()
+    best_found = es_optimizer.get_best_solution()
     convergence_history = es_optimizer.get_history()
 
     # --- Display and Log Results ---
