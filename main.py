@@ -1,10 +1,15 @@
+import logging
+from datetime import datetime
+import os
 
-# es_optimiser/main.py
-
-from es_optimiser.evolution_strategy import EvolutionStrategy, Individual # Import Individual if needed
-from es_optimiser.objective_functions import rastrigin
-from es_optimiser.utils import plot_convergence, plot_rastrigin_2d_landscape
-import numpy as np
+# Configure logging
+log_filename = "es_optimization.log"
+logging.basicConfig(
+    filename=log_filename,
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filemode='a'  # Append to the log file
+)
 
 if __name__ == "__main__":
     # --- Configuration ---
@@ -14,9 +19,21 @@ if __name__ == "__main__":
     OFFSPRING_LAMBDA = 200  # Number of offspring
     GENERATIONS = 250       # Max iterations
     MUTATION_SIGMA = 0.2    # Initial mutation strength (requires tuning!)
-    # Choose selection: '(mu, lambda)' or '(mu + lambda)'
-    SELECTION_STRATEGY = '(mu, lambda)'
+    SELECTION_STRATEGY = '(mu + lambda)'
     RANDOM_SEED = 123       # For reproducibility
+
+    # Log hyperparameter configuration
+    logging.info("========================================")
+    logging.info(f"Run started at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logging.info("Starting ES Optimization with the following configuration:")
+    logging.info(f"PROBLEM_DIMENSIONS: {PROBLEM_DIMENSIONS}")
+    logging.info(f"SEARCH_BOUNDS: {SEARCH_BOUNDS}")
+    logging.info(f"POPULATION_MU: {POPULATION_MU}")
+    logging.info(f"OFFSPRING_LAMBDA: {OFFSPRING_LAMBDA}")
+    logging.info(f"GENERATIONS: {GENERATIONS}")
+    logging.info(f"MUTATION_SIGMA: {MUTATION_SIGMA}")
+    logging.info(f"SELECTION_STRATEGY: {SELECTION_STRATEGY}")
+    logging.info(f"RANDOM_SEED: {RANDOM_SEED}")
 
     print(f"--- Running ES for {PROBLEM_DIMENSIONS}-D Rastrigin Function ---")
 
@@ -33,28 +50,37 @@ if __name__ == "__main__":
         seed=RANDOM_SEED
     )
 
-    es_optimizer.run() # Execute the optimization
+    es_optimizer.run()  # Execute the optimization
 
     # --- Retrieve Results ---
     best_found: Individual = es_optimizer.get_best_solution()
     convergence_history = es_optimizer.get_history()
 
-    # --- Display Results ---
+    # --- Display and Log Results ---
     if best_found:
         print("\n--- Optimization Results ---")
-        # Use the __repr__ of the Individual class
         print(f"Best Individual Found: {best_found}")
-        # Check proximity to known optimum (0,0,...,0)
         distance_to_origin = np.linalg.norm(best_found.genotype)
         print(f"Distance from Origin (Global Optimum): {distance_to_origin:.4e}")
+
+        # Log results
+        logging.info("Optimization completed successfully.")
+        logging.info(f"Best Individual Found: {best_found}")
+        logging.info(f"Distance from Origin (Global Optimum): {distance_to_origin:.4e}")
     else:
         print("\nOptimization did not complete successfully or find a best individual.")
+        logging.warning("Optimization did not complete successfully or find a best individual.")
 
     # --- Plotting ---
     if convergence_history:
+        print("\n--- Plotting Convergence History ---")
         plot_convergence(convergence_history, title=f"Rastrigin {PROBLEM_DIMENSIONS}D ES Convergence ({SELECTION_STRATEGY})")
+        logging.info("Convergence history plotted.")
 
-    # Plot 2D landscape only if dimensions=2
     if PROBLEM_DIMENSIONS == 2 and best_found:
+        print("\n--- Plotting Rastrigin 2D Landscape ---")
         plot_rastrigin_2d_landscape(bounds=SEARCH_BOUNDS, best_solution=best_found.genotype)
+        logging.info("2D landscape plotted.")
 
+    logging.info(f"Run ended at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logging.info("========================================")
