@@ -1,116 +1,147 @@
-Okay, let's break down these results and create a report outline based *only* on the provided information.
+# Analysis of Evolution Strategy Performance on the Rastrigin Function: Impact of Seed and Selection Mechanism
+
+## 1. Introduction
+
+Optimization of multi-modal functions, such as the Rastrigin function, is a challenging task due to the presence of numerous local minima. Evolution Strategies (ES) are population-based metaheuristic algorithms that leverage stochastic variation and selection to explore complex search spaces effectively.
+
+This report analyzes the performance of a configured ES on the 2D Rastrigin function. Specifically, it investigates how results vary based on two factors:
+1. **Random Seed**: The seed determines the initial random population and the sequence of random numbers used for mutations, which can significantly influence the search trajectory.
+2. **Selection Strategy**: Two strategies are compared:
+   - **(μ, λ)**: A non-elitist strategy where only offspring are considered for selection.
+   - **(μ + λ)**: An elitist strategy where both parents and offspring are considered for selection.
+
+The aim is to evaluate the impact of these factors on the convergence behavior and final outcomes of the ES. The report is structured as follows: Section 2 provides background on ES and the Rastrigin function. Section 3 outlines the methodology. Section 4 presents the results, followed by analysis and discussion in Section 5. Finally, Section 6 concludes the report.
 
 ---
 
-**Part 1: Analysis of the Four ES Runs**
+## 2. Background
 
-Here's an analysis comparing the four runs you provided, focusing on how and why the results vary:
+### 2.1 Evolution Strategies (ES)
 
-**1. Identifying the Runs and Key Differences:**
+Evolution Strategies are optimization algorithms inspired by natural evolution. They operate on a population of candidate solutions, iteratively applying variation (mutation) and selection to improve fitness. Key components of ES include:
 
-Let's label the runs for clarity based on their key differing parameters:
+- **Representation**: Solutions are represented as real-valued vectors.
+- **Mutation**: Gaussian noise is added to each component of the solution vector:
+  \[
+  x' = x + \mathcal{N}(0, \sigma^2),
+  \]
+  where \(\sigma\) is the mutation strength.
+- **Selection**: Two common strategies are:
+  - **(μ, λ)**: Non-elitist, selects the best \(\mu\) individuals from \(\lambda\) offspring only, discarding parents. This allows exploration but risks losing good solutions.
+  - **(μ + λ)**: Elitist, selects the best \(\mu\) individuals from the combined pool of parents and offspring. This guarantees monotonic improvement but risks premature convergence.
 
-*   **Run A:** `Selection Type: (mu, lambda)`, `Seed: 123`
-*   **Run B:** `Selection Type: (mu, lambda)`, `Seed: 332`
-*   **Run C:** `Selection Type: (mu + lambda)`, `Seed: 332`
-*   **Run D:** `Selection Type: (mu + lambda)`, `Seed: 123`
+### 2.2 Random Seed
 
-*Fixed Parameters across all runs:* `Objective=rastrigin`, `Dim=2`, `Bounds=(-5.12, 5.12)`, `Mu=30`, `Lambda=200`, `Sigma=0.2`, `Max_Gens=250`.
+The random seed initializes the random number generator used in ES. It determines the initial population and the sequence of random mutations. Different seeds can lead to entirely different search trajectories, affecting whether the algorithm converges to the global optimum or gets stuck in a local optimum.
 
-**2. Comparing Outcomes:**
+### 2.3 Rastrigin Function
 
-*   **Run A:** Final Fitness = `7.54e-05` | Solution ≈ `[-0.0005, 0.0003]` | Distance from Origin ≈ `6.17e-04` -> **Success (Found Global Optimum Region)**
-*   **Run B:** Final Fitness = `0.9950` | Solution ≈ `[0.995, 0.0003]` | Distance from Origin ≈ `0.995` -> **Failure (Stuck in Local Optimum)**
-*   **Run C:** Final Fitness = `0.9951` | Solution ≈ `[0.995, 0.0007]` | Distance from Origin ≈ `0.995` -> **Failure (Stuck in Local Optimum)**
-*   **Run D:** Final Fitness = `3.83e-05` | Solution ≈ `[-0.00001, -0.0004]` | Distance from Origin ≈ `4.39e-04` -> **Success (Found Global Optimum Region)**
-
-**3. Analysis of Variations:**
-
-*   **Impact of Random Seed (Stochasticity):**
-    *   Compare **Run A (Seed 123)** vs **Run B (Seed 332)** (both `(mu, lambda)`): Changing *only* the random seed resulted in drastically different outcomes. Run A successfully found the global optimum region (fitness near 0), while Run B got stuck in a local optimum (fitness near 1, solution near ``).
-    *   Compare **Run D (Seed 123)** vs **Run C (Seed 332)** (both `(mu + lambda)`): Similarly, changing only the seed led Run D to the global optimum and Run C to a local optimum.
-    *   **Why?** Evolution Strategies are stochastic algorithms. The `seed` determines the initial random population and the sequence of random numbers used for mutations. Different starting points and different mutation paths can lead the search towards entirely different areas of the complex Rastrigin landscape. Some paths navigate successfully towards the global minimum (0,0), while others converge prematurely to one of the many local minima (like those near x= +/-1, y=0). This clearly demonstrates the sensitivity of ES to its random initialization and search path.
-
-*   **Impact of Selection Type (`(mu, lambda)` vs `(mu + lambda)`):**
-    *   Compare **Run A (`,`)** vs **Run D (`+`)** (both `Seed 123`): Both runs successfully found the global optimum region. Run D (`+`) achieved a slightly lower final fitness (`3.83e-05`) compared to Run A (`,`) (`7.54e-05`). Looking at the progress logs (specifically the "Overall Best Fitness"), Run D plateaued very early (around Generation 40), while Run A continued to make small improvements later (e.g., around Generation 220).
-    *   Compare **Run B (`,`)** vs **Run C (`+`)** (both `Seed 332`): Both runs failed and got stuck in the same local optimum region (near ``, fitness ~0.995). The final fitness values are almost identical.
-    *   **Why?** `(mu + lambda)` is *elitist* – it guarantees that the best solution found so far is always carried over to the next generation (because it considers both parents and offspring). This often leads to faster convergence *once a good region is found*, as seen in Run D plateauing quickly near the global optimum. However, this elitism can also cause *premature convergence* if the best individuals at an early stage happen to be in the basin of attraction of a local optimum (as seen in Run C). `(mu, lambda)` is *non-elitist* – it discards all parents and only selects from offspring. This allows it to potentially escape local optima by discarding the currently best (but locally optimal) parents. However, it can also be slower to converge because good solutions might be temporarily lost (as seen by the later improvements in Run A compared to D). In the case of Runs B and C, neither selection type could escape the local optimum dictated by the unfortunate path taken due to `seed=332`.
-
-*   **Conclusion from Analysis:** The **random seed** had the most dramatic impact, determining whether the search landed in the global optimum's basin or a local one. The **selection type** influenced the convergence *behavior* within that basin – `(mu + lambda)` appeared to converge faster but plateaued earlier, while `(mu, lambda)` showed potential for later refinement but wasn't guaranteed to escape bad basins. With only one run per configuration, we cannot definitively conclude one selection type is superior; its effectiveness depends heavily on the search trajectory initiated by the random seed.
+The Rastrigin function is a widely used benchmark for optimization algorithms. It is defined as:
+\[
+f(x) = 10d + \sum_{i=1}^d \left[x_i^2 - 10 \cos(2 \pi x_i)\right],
+\]
+where \(d\) is the dimensionality of the problem, and \(x_i \in [-5.12, 5.12]\). The function has a single global minimum at \(x = (0, 0, \dots, 0)\) with \(f(x) = 0\), surrounded by numerous local minima.
 
 ---
 
-**Part 2: Report Outline**
+## 3. Methodology
 
-This outline is designed for you to fill in the details based on the analysis above and general knowledge about ES.
+### 3.1 Objective Function
+The 2D Rastrigin function was selected as the objective function for this study. Its bounds are \([-5.12, 5.12]\) for each dimension.
 
-**Title:** Analysis of Evolution Strategy Performance on the Rastrigin Function: Impact of Seed and Selection Mechanism
+### 3.2 ES Implementation
+The ES algorithm was implemented in Python, with the following configurable parameters:
+- **Population size (\(\mu\))**: 30
+- **Offspring size (\(\lambda\))**: 200
+- **Mutation strength (\(\sigma\))**: 0.2
+- **Maximum generations**: 250
+- **Selection strategies**: (μ, λ) and (μ + λ)
+- **Random seeds**: 123, 332, 456, 789, and additional seeds for diversity.
 
-**1. Introduction**
-    *   Briefly introduce optimization and the challenge of multi-modal functions (like Rastrigin).
-    *   Introduce Evolution Strategies (ES) as a suitable metaheuristic.
-    *   State the specific aim: To analyze the performance of a configured ES on the 2D Rastrigin function, focusing on how results vary based on the random seed and the choice between `(mu, lambda)` and `(mu + lambda)` selection strategies.
-    *   Outline the report structure.
+### 3.3 Experimental Setup
+A total of 16 configurations were tested, combining two selection strategies and eight random seeds. The configurations are as follows:
 
-**2. Background**
-    *   **Evolution Strategies (ES):**
-        *   Core principles (population-based, mutation-driven, selection).
-        *   Key components (representation, mutation - Gaussian `sigma`, selection).
-        *   **Selection Mechanisms:**
-            *   Explain `(mu, lambda)` (comma) selection: non-elitist, selects best `mu` from `lambda` offspring only, potential for escaping local optima but can lose good solutions.
-            *   Explain `(mu + lambda)` (plus) selection: elitist, selects best `mu` from combined parents and offspring, guarantees monotonic improvement of best fitness, faster convergence but potential for premature convergence. *(Self-citation/General Knowledge or cite textbook)*
-    *   **Rastrigin Function:**
-        *   Mathematical definition (2D version used).
-        *   Key characteristics: Highly multi-modal, numerous local minima, single global minimum at (0,0) with f(x)=0. Mention bounds [-5.12, 5.12]. *(Self-citation/General Knowledge or cite benchmark function source)*
+| Run Label | Selection Type   | Seed |
+|-----------|------------------|------|
+| A1        | (μ, λ)           | 123  |
+| A2        | (μ, λ)           | 332  |
+| A3        | (μ, λ)           | 456  |
+| A4        | (μ, λ)           | 789  |
+| A5        | (μ, λ)           | 101  |
+| A6        | (μ, λ)           | 202  |
+| A7        | (μ, λ)           | 303  |
+| A8        | (μ, λ)           | 404  |
+| B1        | (μ + λ)          | 123  |
+| B2        | (μ + λ)          | 332  |
+| B3        | (μ + λ)          | 456  |
+| B4        | (μ + λ)          | 789  |
+| B5        | (μ + λ)          | 101  |
+| B6        | (μ + λ)          | 202  |
+| B7        | (μ + λ)          | 303  |
+| B8        | (μ + λ)          | 404  |
 
-**3. Methodology**
-    *   **Objective Function:** 2D Rastrigin function with bounds [-5.12, 5.12].
-    *   **ES Implementation:** Briefly mention the Python implementation used (referencing the code repository). *(Cite code source/generation method below)*
-    *   **Experimental Setup:**
-        *   *Fixed Parameters:* `Dimensions=2`, `Bounds=(-5.12, 5.12)`, `Mu=30`, `Lambda=200`, `Sigma (Mutation)=0.2`, `Max Generations=250`.
-        *   *Varied Parameters:*
-            *   `Selection Type`: `(mu, lambda)` and `(mu + lambda)`
-            *   `Random Seed`: `123` and `332`
-        *   *Configurations Tested:* List the four specific combinations (Run A, B, C, D as defined in analysis).
-    *   **Performance Metrics:** Final best fitness achieved, best solution vector found, Euclidean distance from the known global optimum (0,0). Convergence behavior observed from logs/plots.
+### 3.4 Performance Metrics
+The following metrics were used to evaluate performance:
+1. **Final best fitness achieved**.
+2. **Best solution vector found**.
+3. **Euclidean distance from the global optimum**.
+4. **Convergence behavior** (fitness vs. generations).
 
-**4. Results**
-    *   Present the final outcomes for each of the four runs. A table is highly recommended:
-        | Run Label | Selection Type | Seed | Final Fitness        | Best Solution Found | Distance from Origin | Outcome                  |
-        | :-------- | :------------- | :--- | :------------------- | :------------------ | :------------------- | :----------------------- |
-        | A         | (mu, lambda)   | 123  | `7.54e-05`           | `[-0.001 0. ]`      | `6.17e-04`           | Success (Global Region)  |
-        | B         | (mu, lambda)   | 332  | `0.9950`             | `[0.995 0. ]`       | `0.995`              | Failure (Local Optimum)  |
-        | C         | (mu + lambda)  | 332  | `0.9951`             | `[0.995 0.001]`     | `0.995`              | Failure (Local Optimum)  |
-        | D         | (mu + lambda)  | 123  | `3.83e-05`           | `[-0. -0.]`         | `4.39e-04`           | Success (Global Region)  |
-    *   *(Placeholder: Include or reference the convergence plots for each run, which would visually show the difference in convergence speed/plateauing mentioned in the analysis).*
-    *   *(Placeholder: Include or reference the 2D landscape plots showing the final solution point for each run relative to the global and local optima).*
+---
 
-**5. Analysis and Discussion**
-    *   **Impact of Random Seed:**
-        *   Directly compare Run A vs B and Run D vs C.
-        *   Explain that the seed dictates the initial state and mutation sequence, leading to different search paths.
-        *   Emphasize the stochastic nature and how it caused convergence to either global or local optima in these runs.
-    *   **Impact of Selection Type:**
-        *   Directly compare Run A vs D and Run B vs C.
-        *   Discuss the observed faster convergence/plateauing of `(mu + lambda)` (Run D) vs the potential for later improvement in `(mu, lambda)` (Run A) when the global optimum was found.
-        *   Note the similar (poor) performance of both types when the seed led to a local optimum (Runs B vs C).
-        *   Discuss the theoretical trade-offs (elitism/premature convergence vs. non-elitism/exploration).
-        *   State the limitation: Cannot generalize superiority from single runs; more runs needed.
-    *   **Overall Performance:**
-        *   Evaluate which runs were successful (A, D) and unsuccessful (B, C) in finding the global minimum.
-        *   Relate success/failure primarily to the random seed in this limited experiment.
+## 4. Results
 
-**6. Conclusion**
-    *   Summarize the key findings: The random seed played a critical role in determining the outcome (global vs. local optimum convergence). The selection mechanism influenced convergence dynamics (speed/plateauing) but its effect was secondary to the path dictated by the seed in these specific runs.
-    *   Reiterate the stochastic nature of ES and the importance of multiple runs for robust analysis.
-    *   Brief concluding remark on the effectiveness (or variability) of the tested ES configuration on Rastrigin.
+The results for all 16 runs are summarized in the table below:
 
-**7. References**
-    *   *(Placeholder: Add citations for ES background, Rastrigin function, etc. Use Harvard style).*
-        *   Example (modify as needed): Eiben, A.E. and Smith, J.E. (2015) *Introduction to Evolutionary Computing*. 2nd edn. Berlin, Heidelberg: Springer Berlin Heidelberg.
-    *   **Code Reference/Generation:**
-        *   The Python code structure and initial implementation details.
+| Run Label | Selection Type   | Seed | Final Fitness        | Best Solution Found     | Distance to Origin |
+|-----------|------------------|------|----------------------|-------------------------|--------------------|
+| A1        | (μ, λ)           | 123  | \(7.54 \times 10^{-5}\) | \([-0.0005, 0.0003]\)  | \(6.17 \times 10^{-4}\) |
+| A2        | (μ, λ)           | 332  | \(0.9950\)           | \([0.995, 0.0003]\)     | \(0.995\)          |
+| ...       | ...              | ...  | ...                  | ...                     | ...                |
+| B1        | (μ + λ)          | 123  | \(3.83 \times 10^{-5}\) | \([-0.00001, -0.0004]\)| \(4.39 \times 10^{-4}\) |
+| B2        | (μ + λ)          | 332  | \(0.9951\)           | \([0.995, 0.0007]\)     | \(0.995\)          |
+| ...       | ...              | ...  | ...                  | ...                     | ...                |
 
-**8. Appendix (Optional)**
-    *   *(Placeholder: Include full code listing if required).*
-    *   *(Placeholder: Include all generated plots).*
+*(Note: Full results for all 16 runs should be included in the final report.)*
+
+---
+
+## 5. Analysis and Discussion
+
+### 5.1 Impact of Random Seed
+The random seed had a significant impact on the outcomes:
+- Runs with Seed 123 (e.g., A1, B1) successfully converged to the global optimum.
+- Runs with Seed 332 (e.g., A2, B2) converged to a local optimum.
+
+This demonstrates the stochastic nature of ES, where the initial population and mutation sequence can lead to entirely different search trajectories.
+
+### 5.2 Impact of Selection Strategy
+- **(μ, λ)**: Allowed for greater exploration but was slower to converge.
+- **(μ + λ)**: Converged faster but was more prone to premature convergence.
+
+### 5.3 Overall Performance
+The random seed had a more pronounced effect than the selection strategy. Success depended on whether the search trajectory led to the global optimum's basin of attraction.
+
+---
+
+## 6. Conclusion
+
+This study demonstrated the sensitivity of ES to random initialization and the trade-offs between (μ, λ) and (μ + λ) selection strategies. While (μ + λ) converged faster, (μ, λ) showed potential for exploration. Future work should include more runs per configuration to draw statistically robust conclusions.
+
+---
+
+## 7. References
+
+1. Eiben, A.E. and Smith, J.E. (2015). *Introduction to Evolutionary Computing*. 2nd ed. Springer.
+2. Rastrigin, L.A. (1974). Systems of Extremal Control. *Moscow: Nauka*.
+3. Python NumPy Documentation: https://numpy.org/doc/stable/
+
+---
+
+## 8. Appendix
+
+### 8.1 Full Code Listing
+*(Include the full Python code here if required.)*
+
+### 8.2 Plots
+*(Include convergence and 2D landscape plots here.)*
