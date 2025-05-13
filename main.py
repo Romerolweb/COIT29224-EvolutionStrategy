@@ -1,5 +1,6 @@
 import logging
 from datetime import datetime
+import time  # Import the time module
 import os
 import es_optimiser
 import numpy as np
@@ -42,6 +43,9 @@ if __name__ == "__main__":
 
     print(f"--- Running ES for {PROBLEM_DIMENSIONS}-D Rastrigin Function ---")
 
+    # --- Timing the Optimization ---
+    start_time = time.time()  # Record the start time
+
     # --- Instantiate and Run ES ---
     es_optimizer = EvolutionStrategy(
         objective_function=rastrigin,
@@ -57,6 +61,9 @@ if __name__ == "__main__":
 
     es_optimizer.run()  # Execute the optimization
 
+    end_time = time.time()  # Record the end time
+    elapsed_time = end_time - start_time  # Calculate elapsed time in seconds
+
     # --- Retrieve Results ---
     best_found = es_optimizer.get_best_solution()
     convergence_history = es_optimizer.get_history()
@@ -67,11 +74,13 @@ if __name__ == "__main__":
         print(f"Best Individual Found: {best_found}")
         distance_to_origin = np.linalg.norm(best_found.genotype)
         print(f"Distance from Origin (Global Optimum): {distance_to_origin:.4e}")
+        print(f"Elapsed Time: {elapsed_time:.2f} seconds")
 
         # Log results
         logging.info("Optimization completed successfully.")
         logging.info(f"Best Individual Found: {best_found}")
         logging.info(f"Distance from Origin (Global Optimum): {distance_to_origin:.4e}")
+        logging.info(f"Elapsed Time: {elapsed_time:.2f} seconds")
     else:
         print("\nOptimization did not complete successfully or find a best individual.")
         logging.warning("Optimization did not complete successfully or find a best individual.")
@@ -88,4 +97,5 @@ if __name__ == "__main__":
         logging.info("2D landscape plotted.")
 
     logging.info(f"Run ended at {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logging.info(f"Total Elapsed Time: {elapsed_time:.2f} seconds")
     logging.info("========================================")
