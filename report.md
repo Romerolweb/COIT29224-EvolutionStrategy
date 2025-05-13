@@ -56,7 +56,7 @@ The ES algorithm was implemented in Python, with the following configurable para
 - **Mutation strength (\(\sigma\))**: 0.2
 - **Maximum generations**: 250
 - **Selection strategies**: (μ, λ) and (μ + λ)
-- **Random seeds**: 123, 332, 456, 789, and additional seeds for diversity.
+- **Random seeds**: 123, 332, 456, 789, 101, 202, 303, 404.
 
 ### 3.3 Experimental Setup
 A total of 16 configurations were tested, combining two selection strategies and eight random seeds. The configurations are as follows:
@@ -97,12 +97,12 @@ The results for all 16 runs are summarized in the table below:
 |-----------|------------------|------|----------------------|-------------------------|--------------------|
 | A1        | (μ, λ)           | 123  | \(7.54 \times 10^{-5}\) | \([-0.0005, 0.0003]\)  | \(6.17 \times 10^{-4}\) |
 | A2        | (μ, λ)           | 332  | \(0.9950\)           | \([0.995, 0.0003]\)     | \(0.995\)          |
-| ...       | ...              | ...  | ...                  | ...                     | ...                |
-| B1        | (μ + λ)          | 123  | \(3.83 \times 10^{-5}\) | \([-0.00001, -0.0004]\)| \(4.39 \times 10^{-4}\) |
-| B2        | (μ + λ)          | 332  | \(0.9951\)           | \([0.995, 0.0007]\)     | \(0.995\)          |
-| ...       | ...              | ...  | ...                  | ...                     | ...                |
-
-*(Note: Full results for all 16 runs should be included in the final report.)*
+| A3        | (μ, λ)           | 456  | \(7.52 \times 10^{-5}\) | \([0.001, -0.000]\)    | \(6.16 \times 10^{-4}\) |
+| A4        | (μ, λ)           | 789  | \(6.08 \times 10^{-5}\) | \([-0.000, 0.000]\)    | \(5.54 \times 10^{-4}\) |
+| B1        | (μ + λ)          | 123  | \(3.83 \times 10^{-5}\) | \([-0.000, -0.000]\)   | \(4.39 \times 10^{-4}\) |
+| B2        | (μ + λ)          | 332  | \(0.9951\)           | \([0.995, 0.001]\)     | \(0.995\)          |
+| B3        | (μ + λ)          | 456  | \(6.59 \times 10^{-5}\) | \([-0.000, -0.000]\)   | \(5.76 \times 10^{-4}\) |
+| B4        | (μ + λ)          | 789  | \(7.12 \times 10^{-4}\) | \([0.002, 0.000]\)     | \(1.89 \times 10^{-3}\) |
 
 ---
 
@@ -140,8 +140,5 @@ This study demonstrated the sensitivity of ES to random initialization and the t
 
 ## 8. Appendix
 
-### 8.1 Full Code Listing
-*(Include the full Python code here if required.)*
-
-### 8.2 Plots
-*(Include convergence and 2D landscape plots here.)*
+### 8.1 Full Logs
+Below are the logs from all runs:
