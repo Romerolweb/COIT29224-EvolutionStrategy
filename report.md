@@ -42,28 +42,44 @@ The codebase emphasizes clarity, extensibility, and robust documentation.
 │   └── plots.md                    \# Plot documentation/notes  
 └── report.md                       \# Project report
 ```
-## **Installation**
+
+## Installation
 
 **Requirements:**
 
-* Python 3.8 or newer  
-* NumPy  
-* Matplotlib
+-   Python 3.8 or newer
+-   NumPy
+-   Matplotlib
 
 **Setup:**
 
-1. Clone the repository:  
-   git clone https://github.com/Romerolweb/COIT29224-EvolutionStrategy.git  
-   cd COIT29224-EvolutionStrategy
+1.  Clone the repository:
 
-2. (Recommended) Create and activate a virtual environment:  
-   python \-m venv venv  
-   * source venv/bin/activate    
-   * .\\venv\\Scripts\\activate \# On Windows:
+    ```bash
+    git clone [https://github.com/Romerolweb/COIT29224-EvolutionStrategy.git](https://github.com/Romerolweb/COIT29224-EvolutionStrategy.git)
+    cd COIT29224-EvolutionStrategy
+    ```
 
-3. Install dependencies:  
-   pip install \-r requirements.txt
+2.  (Recommended) Create and activate a virtual environment:
 
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+    ```
+
+3.  Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## How to Run
+
+Run the main script from the project root:
+
+```bash
+python main.py
+```
 ## **How to Run**
 
 Run the main script from the project root:
@@ -94,18 +110,21 @@ Edit the parameters in main.py (inside the run\_es\_optimization function or the
 ## **Adding Objective Functions**
 
 1. Define the function in es\_optimiser/objective\_functions.py:  
+  ```python
    def my\_function(x: np.ndarray) \-\> float:  
        \# Implementation of the objective function  
        return value
-
+  ```
 2. Update main.py to use the new function:  
-   from es\_optimiser.objective\_functions import my\_function  
-   \# ...  
-   es\_optimizer \= EvolutionStrategy(  
+  ```python
+   from es_optimiser.objective\_functions import my\_function  
+   # ...  
+   
+    es_optimizer \= EvolutionStrategy(  
        objective\_function=my\_function,  
        \# ...  
    )
-
+```
 ## **Output**
 
 * **Logs:** Each run creates a log file in logs/ with a unique batch ID.  
@@ -125,7 +144,7 @@ This report analyzes the performance of a configured ES on the 2D Rastrigin func
    * **(μ, λ)**: A non-elitist strategy where only offspring are considered for selection.  
    * **(μ \+ λ)**: An elitist strategy where both parents and offspring are considered for selection.
 
-The aim is to evaluate the impact of these factors on the convergence behavior and final outcomes of the ES. The report is structured as follows: Section 2 provides background on ES and the Rastrigin function. Section 3 outlines the methodology employed in this study. Section 4 presents the results, followed by analysis and discussion in Section 5\. Finally, Section 6 concludes the report.
+The aim is to evaluate the impact of these factors on the convergence behavior and final outcomes of the ES. The report is structured as follows: Section 2 provides background on ES and the Rastrigin function. Section 3 outlines the methodology employed in this study. Section 4 presents the results, followed by analysis and discussion in Section 5\.  Section 6 concludes the report. Finally, Section 7 lists the references used in this study, and Section 8 includes the full logs from all runs.
 
 ## **2\. Background**
 
@@ -140,6 +159,28 @@ Evolution Strategies are optimization algorithms inspired by natural evolution. 
 * **Selection**: This process determines which individuals survive and reproduce. Two common strategies are:  
   * **(μ, λ)**: A non-elitist strategy that selects the best ( \\mu ) individuals from ( \\lambda ) offspring, discarding the parents. This strategy promotes exploration but may risk losing potentially valuable solutions.  
   * **(μ \+ λ)**: An elitist strategy that selects the best ( \\mu ) individuals from the combined pool of parents and offspring. This strategy guarantees monotonic improvement in fitness but can increase the risk of premature convergence to a sub-optimal solution.
+#### *** Flowchart of the ES Algorithm***
+
+```mermaid
+  flowchart TD
+      A[Start: User runs main.py] --> B[Batch Setup<br>Generate Batch ID, Create Output Folders, Configure Logging]
+      B --> C[Parameter Configuration<br>(Dimensions, Bounds, μ, λ, σ, Generations, Selection, Seed, Objective)]
+      C --> D[Initialize EvolutionStrategy<br>Class Instantiation]
+      D --> E[Initialize Population<br>Randomly generate μ individuals]
+      E --> F[Main Evolution Loop (for each Generation)]
+      F --> G[Generate λ Offspring<br>Mutation (Gaussian Noise), Boundary Handling]
+      G --> H[Evaluate Offspring Fitness<br>Objective Function]
+      H --> I[Survivor Selection<br>(μ, λ) or (μ + λ)]
+      I --> J[Update Best Solution<br>Track Best Individual]
+      J --> K{More Generations?}
+      K -- Yes --> F
+      K -- No --> L[Save Results<br>Best Solution, Convergence History]
+      L --> M[Generate Plots<br>Convergence Plot, 2D Landscape (if applicable)]
+      M --> N[Log Results<br>Batch Log File]
+      N --> O[End: Output Summary to Console]
+```
+
+
 
 ### **2.2 Random Seed**
 
