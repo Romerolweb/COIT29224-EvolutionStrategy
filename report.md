@@ -142,3 +142,13 @@ This study demonstrated the sensitivity of ES to random initialization and the t
 
 ### 8.1 Full Logs
 Below are the logs from all runs:
+
+[Log file](es_optimization_A1.log)
+(Note, the logs are too long to include in full here, but they can be found in the provided file.)
+
+
+```
+{% raw %}
+{% include_relative es_optimization.log %}
+{% endraw %}
+```
