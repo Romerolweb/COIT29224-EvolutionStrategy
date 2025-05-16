@@ -144,11 +144,4 @@ This study demonstrated the sensitivity of ES to random initialization and the t
 Below are the logs from all runs:
 
 [Log file](es_optimization_A1.log)
-(Note, the logs are too long to include in full here, but they can be found in the provided file.)
-
-
-```
-{% raw %}
-{% include_relative es_optimization.log %}
-{% endraw %}
-```
+(Note, the logs are too long to include in full here, but they can be found in the provided file. Numerous executions were performed, though, they are not included here, as the report should be readable for a general audience. Additional executions are indentified by UUIDs, and their generated plots are included in the plots folder. Furthermore, the logs will be located in a diferent folder named plots, and UUIDs will serve as a way to math the generated plots with the respective log.)
