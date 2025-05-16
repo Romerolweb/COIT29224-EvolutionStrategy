@@ -46,6 +46,9 @@ The codebase emphasizes clarity, extensibility, and robust documentation.
 └── report.md                       # Project report
 ```
 
+[See ES Algorithm Flowchart (diagram.md)](diagram.md)
+
+
 ## Installation
 
 **Requirements:**
@@ -112,6 +115,7 @@ Edit the parameters in `main.py` (inside the `run_es_optimization` function or t
         # ...
     )
     ```
+
 
 ## Output
 

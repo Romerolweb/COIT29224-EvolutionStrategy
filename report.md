@@ -161,26 +161,7 @@ Evolution Strategies are optimization algorithms inspired by natural evolution. 
   * **(μ \+ λ)**: An elitist strategy that selects the best ( \\mu ) individuals from the combined pool of parents and offspring. This strategy guarantees monotonic improvement in fitness but can increase the risk of premature convergence to a sub-optimal solution.
 #### *** Flowchart of the ES Algorithm***
 
-```mermaid
-  flowchart TD
-      A[Start: User runs main.py] --> B[Batch Setup<br>Generate Batch ID, Create Output Folders, Configure Logging]
-      B --> C[Parameter Configuration<br>(Dimensions, Bounds, μ, λ, σ, Generations, Selection, Seed, Objective)]
-      C --> D[Initialize EvolutionStrategy<br>Class Instantiation]
-      D --> E[Initialize Population<br>Randomly generate μ individuals]
-      E --> F[Main Evolution Loop (for each Generation)]
-      F --> G[Generate λ Offspring<br>Mutation (Gaussian Noise), Boundary Handling]
-      G --> H[Evaluate Offspring Fitness<br>Objective Function]
-      H --> I[Survivor Selection<br>(μ, λ) or (μ + λ)]
-      I --> J[Update Best Solution<br>Track Best Individual]
-      J --> K{More Generations?}
-      K -- Yes --> F
-      K -- No --> L[Save Results<br>Best Solution, Convergence History]
-      L --> M[Generate Plots<br>Convergence Plot, 2D Landscape (if applicable)]
-      M --> N[Log Results<br>Batch Log File]
-      N --> O[End: Output Summary to Console]
-```
-
-
+[See ES Algorithm Flowchart (diagram.md)](diagram.md)
 
 ### **2.2 Random Seed**
 
