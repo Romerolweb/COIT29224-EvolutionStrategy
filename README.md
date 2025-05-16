@@ -34,14 +34,23 @@ The implementation prioritizes **clarity**, **modularity**, **robust documentati
 
 ```
 .
-├── es_optimiser/             # Main Python package for the ES logic
-│   ├── __init__.py           # Initializes the package
-│   ├── objective_functions.py# Defines fitness functions (e.g., Rastrigin)
-│   ├── evolution_strategy_clarified.py # Contains the ES algorithm classes
-│   └── utils.py              # Utility functions (plotting, etc.)
-├── .gitignore                # Standard Git ignore file for Python projects
-├── README.md                 # This documentation file
-└── main.py                   # Example execution script to run the optimizer
+├── LICENSE                         # Project license (GPL)
+├── README.md                       # This documentation file
+├── es_optimiser/                   # Main Python package for ES logic
+│   ├── __init__.py                 # Package initializer
+│   ├── __pycache__/                # Python bytecode cache
+│   ├── evolution_strategy.py       # ES algorithm implementation
+│   ├── objective_functions.py      # Fitness/objective functions (e.g., Rastrigin)
+│   └── plot.py                     # Plotting utilities
+├── es_optimization_A1.log          # Example log file (one for the firs runs after standarising the log format)
+├── log_6e93dd33-88cb-4382-a962-b907568a327a.log # Example log file
+├── main.py                         # Main script to run the optimizer
+├── plan-to-develop.md              # Future deevelopment notes
+├── requirements.txt                # Python package dependencies
+├── plots/                          # Output plots directory
+│   ├── 6e93dd33-88cb-4382-a962-b907568a327a/ # Example run-specific plots
+│   └── plots.md                    # Plot documentation/notes
+└── report.md                       # Project report
 ```
 
 ## Installation Requirements
