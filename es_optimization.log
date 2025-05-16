@@ -1,0 +1,158 @@
+2025-05-06 06:27:44,365 - INFO - ========================================
+2025-05-06 06:27:44,365 - INFO - Run started at 2025-05-06 06:27:44
+2025-05-06 06:27:44,365 - INFO - Starting ES Optimization with the following configuration:
+2025-05-06 06:27:44,365 - INFO - PROBLEM_DIMENSIONS: 2
+2025-05-06 06:27:44,365 - INFO - SEARCH_BOUNDS: (-5.12, 5.12)
+2025-05-06 06:27:44,365 - INFO - POPULATION_MU: 30
+2025-05-06 06:27:44,365 - INFO - OFFSPRING_LAMBDA: 200
+2025-05-06 06:27:44,366 - INFO - GENERATIONS: 250
+2025-05-06 06:27:44,366 - INFO - MUTATION_SIGMA: 0.2
+2025-05-06 06:27:44,366 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-06 06:27:44,366 - INFO - RANDOM_SEED: 123
+2025-05-06 06:28:37,127 - INFO - ========================================
+2025-05-06 06:28:37,127 - INFO - Run started at 2025-05-06 06:28:37
+2025-05-06 06:28:37,127 - INFO - Starting ES Optimization with the following configuration:
+2025-05-06 06:28:37,128 - INFO - PROBLEM_DIMENSIONS: 2
+2025-05-06 06:28:37,128 - INFO - SEARCH_BOUNDS: (-5.12, 5.12)
+2025-05-06 06:28:37,128 - INFO - POPULATION_MU: 30
+2025-05-06 06:28:37,128 - INFO - OFFSPRING_LAMBDA: 200
+2025-05-06 06:28:37,128 - INFO - GENERATIONS: 250
+2025-05-06 06:28:37,128 - INFO - MUTATION_SIGMA: 0.2
+2025-05-06 06:28:37,128 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-06 06:28:37,128 - INFO - RANDOM_SEED: 123
+2025-05-06 06:29:06,860 - INFO - ========================================
+2025-05-06 06:29:06,861 - INFO - Run started at 2025-05-06 06:29:06
+2025-05-06 06:29:06,861 - INFO - Starting ES Optimization with the following configuration:
+2025-05-06 06:29:06,861 - INFO - PROBLEM_DIMENSIONS: 2
+2025-05-06 06:29:06,861 - INFO - SEARCH_BOUNDS: (-5.12, 5.12)
+2025-05-06 06:29:06,861 - INFO - POPULATION_MU: 30
+2025-05-06 06:29:06,861 - INFO - OFFSPRING_LAMBDA: 200
+2025-05-06 06:29:06,861 - INFO - GENERATIONS: 250
+2025-05-06 06:29:06,861 - INFO - MUTATION_SIGMA: 0.2
+2025-05-06 06:29:06,861 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-06 06:29:06,861 - INFO - RANDOM_SEED: 123
+2025-05-06 06:29:23,480 - INFO - ========================================
+2025-05-06 06:29:23,480 - INFO - Run started at 2025-05-06 06:29:23
+2025-05-06 06:29:23,480 - INFO - Starting ES Optimization with the following configuration:
+2025-05-06 06:29:23,480 - INFO - PROBLEM_DIMENSIONS: 2
+2025-05-06 06:29:23,480 - INFO - SEARCH_BOUNDS: (-5.12, 5.12)
+2025-05-06 06:29:23,480 - INFO - POPULATION_MU: 30
+2025-05-06 06:29:23,481 - INFO - OFFSPRING_LAMBDA: 200
+2025-05-06 06:29:23,481 - INFO - GENERATIONS: 250
+2025-05-06 06:29:23,481 - INFO - MUTATION_SIGMA: 0.2
+2025-05-06 06:29:23,481 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-06 06:29:23,481 - INFO - RANDOM_SEED: 123
+2025-05-06 06:29:50,150 - INFO - ========================================
+2025-05-06 06:29:50,150 - INFO - Run started at 2025-05-06 06:29:50
+2025-05-06 06:29:50,150 - INFO - Starting ES Optimization with the following configuration:
+2025-05-06 06:29:50,151 - INFO - PROBLEM_DIMENSIONS: 2
+2025-05-06 06:29:50,151 - INFO - SEARCH_BOUNDS: (-5.12, 5.12)
+2025-05-06 06:29:50,151 - INFO - POPULATION_MU: 30
+2025-05-06 06:29:50,151 - INFO - OFFSPRING_LAMBDA: 200
+2025-05-06 06:29:50,151 - INFO - GENERATIONS: 250
+2025-05-06 06:29:50,151 - INFO - MUTATION_SIGMA: 0.2
+2025-05-06 06:29:50,151 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-06 06:29:50,151 - INFO - RANDOM_SEED: 123
+2025-05-06 06:29:52,067 - INFO - Optimization completed successfully.
+2025-05-06 06:29:52,067 - INFO - Best Individual Found: Individual(fitness=3.8255e-05, genotype=[-0. -0.])
+2025-05-06 06:29:52,067 - INFO - Distance from Origin (Global Optimum): 4.3912e-04
+2025-05-06 06:29:52,266 - INFO - Convergence history plotted.
+2025-05-06 06:29:52,670 - INFO - 2D landscape plotted.
+2025-05-06 06:29:52,671 - INFO - Run ended at 2025-05-06 06:29:52
+2025-05-06 06:29:52,671 - INFO - ========================================
+2025-05-13 06:37:25,997 - INFO - ========================================
+2025-05-13 06:37:25,998 - INFO - Run started at 2025-05-13 06:37:25
+2025-05-13 06:37:25,998 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:25,998 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-13 06:37:25,998 - INFO - RANDOM_SEED: 123
+2025-05-13 06:37:28,159 - INFO - Optimization completed successfully.
+2025-05-13 06:37:28,159 - INFO - Best Individual Found: Individual(fitness=7.5433e-05, genotype=[-0.001  0.   ])
+2025-05-13 06:37:28,159 - INFO - Distance from Origin (Global Optimum): 6.1662e-04
+2025-05-13 06:37:28,159 - INFO - Elapsed Time: 2.16 seconds
+2025-05-13 06:37:28,159 - INFO - Run ended at 2025-05-13 06:37:28
+2025-05-13 06:37:28,159 - INFO - Total Elapsed Time: 2.16 seconds
+2025-05-13 06:37:28,159 - INFO - ========================================
+2025-05-13 06:37:28,159 - INFO - ========================================
+2025-05-13 06:37:28,159 - INFO - Run started at 2025-05-13 06:37:28
+2025-05-13 06:37:28,160 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:28,160 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-13 06:37:28,160 - INFO - RANDOM_SEED: 332
+2025-05-13 06:37:29,965 - INFO - Optimization completed successfully.
+2025-05-13 06:37:29,965 - INFO - Best Individual Found: Individual(fitness=9.9502e-01, genotype=[0.995 0.   ])
+2025-05-13 06:37:29,965 - INFO - Distance from Origin (Global Optimum): 9.9537e-01
+2025-05-13 06:37:29,966 - INFO - Elapsed Time: 1.81 seconds
+2025-05-13 06:37:29,966 - INFO - Run ended at 2025-05-13 06:37:29
+2025-05-13 06:37:29,966 - INFO - Total Elapsed Time: 1.81 seconds
+2025-05-13 06:37:29,966 - INFO - ========================================
+2025-05-13 06:37:29,966 - INFO - ========================================
+2025-05-13 06:37:29,966 - INFO - Run started at 2025-05-13 06:37:29
+2025-05-13 06:37:29,966 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:29,966 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-13 06:37:29,966 - INFO - RANDOM_SEED: 456
+2025-05-13 06:37:31,777 - INFO - Optimization completed successfully.
+2025-05-13 06:37:31,778 - INFO - Best Individual Found: Individual(fitness=7.5162e-05, genotype=[ 0.001 -0.   ])
+2025-05-13 06:37:31,778 - INFO - Distance from Origin (Global Optimum): 6.1551e-04
+2025-05-13 06:37:31,778 - INFO - Elapsed Time: 1.81 seconds
+2025-05-13 06:37:31,778 - INFO - Run ended at 2025-05-13 06:37:31
+2025-05-13 06:37:31,778 - INFO - Total Elapsed Time: 1.81 seconds
+2025-05-13 06:37:31,778 - INFO - ========================================
+2025-05-13 06:37:31,778 - INFO - ========================================
+2025-05-13 06:37:31,778 - INFO - Run started at 2025-05-13 06:37:31
+2025-05-13 06:37:31,779 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:31,779 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-13 06:37:31,779 - INFO - RANDOM_SEED: 789
+2025-05-13 06:37:33,717 - INFO - Optimization completed successfully.
+2025-05-13 06:37:33,717 - INFO - Best Individual Found: Individual(fitness=6.0822e-05, genotype=[-0.  0.])
+2025-05-13 06:37:33,718 - INFO - Distance from Origin (Global Optimum): 5.5369e-04
+2025-05-13 06:37:33,718 - INFO - Elapsed Time: 1.94 seconds
+2025-05-13 06:37:33,718 - INFO - Run ended at 2025-05-13 06:37:33
+2025-05-13 06:37:33,718 - INFO - Total Elapsed Time: 1.94 seconds
+2025-05-13 06:37:33,718 - INFO - ========================================
+2025-05-13 06:37:33,718 - INFO - ========================================
+2025-05-13 06:37:33,718 - INFO - Run started at 2025-05-13 06:37:33
+2025-05-13 06:37:33,718 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:33,718 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-13 06:37:33,719 - INFO - RANDOM_SEED: 123
+2025-05-13 06:37:35,550 - INFO - Optimization completed successfully.
+2025-05-13 06:37:35,550 - INFO - Best Individual Found: Individual(fitness=3.8255e-05, genotype=[-0. -0.])
+2025-05-13 06:37:35,550 - INFO - Distance from Origin (Global Optimum): 4.3912e-04
+2025-05-13 06:37:35,550 - INFO - Elapsed Time: 1.83 seconds
+2025-05-13 06:37:35,550 - INFO - Run ended at 2025-05-13 06:37:35
+2025-05-13 06:37:35,551 - INFO - Total Elapsed Time: 1.83 seconds
+2025-05-13 06:37:35,551 - INFO - ========================================
+2025-05-13 06:37:35,551 - INFO - ========================================
+2025-05-13 06:37:35,551 - INFO - Run started at 2025-05-13 06:37:35
+2025-05-13 06:37:35,551 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:35,551 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-13 06:37:35,551 - INFO - RANDOM_SEED: 332
+2025-05-13 06:37:37,559 - INFO - Optimization completed successfully.
+2025-05-13 06:37:37,560 - INFO - Best Individual Found: Individual(fitness=9.9507e-01, genotype=[0.995 0.001])
+2025-05-13 06:37:37,560 - INFO - Distance from Origin (Global Optimum): 9.9522e-01
+2025-05-13 06:37:37,560 - INFO - Elapsed Time: 2.01 seconds
+2025-05-13 06:37:37,560 - INFO - Run ended at 2025-05-13 06:37:37
+2025-05-13 06:37:37,560 - INFO - Total Elapsed Time: 2.01 seconds
+2025-05-13 06:37:37,560 - INFO - ========================================
+2025-05-13 06:37:37,561 - INFO - ========================================
+2025-05-13 06:37:37,561 - INFO - Run started at 2025-05-13 06:37:37
+2025-05-13 06:37:37,561 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:37,561 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-13 06:37:37,561 - INFO - RANDOM_SEED: 456
+2025-05-13 06:37:39,460 - INFO - Optimization completed successfully.
+2025-05-13 06:37:39,461 - INFO - Best Individual Found: Individual(fitness=6.5871e-05, genotype=[-0. -0.])
+2025-05-13 06:37:39,461 - INFO - Distance from Origin (Global Optimum): 5.7622e-04
+2025-05-13 06:37:39,461 - INFO - Elapsed Time: 1.90 seconds
+2025-05-13 06:37:39,461 - INFO - Run ended at 2025-05-13 06:37:39
+2025-05-13 06:37:39,461 - INFO - Total Elapsed Time: 1.90 seconds
+2025-05-13 06:37:39,461 - INFO - ========================================
+2025-05-13 06:37:39,461 - INFO - ========================================
+2025-05-13 06:37:39,462 - INFO - Run started at 2025-05-13 06:37:39
+2025-05-13 06:37:39,462 - INFO - Starting ES Optimization with the following configuration:
+2025-05-13 06:37:39,462 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-13 06:37:39,462 - INFO - RANDOM_SEED: 789
+2025-05-13 06:37:41,290 - INFO - Optimization completed successfully.
+2025-05-13 06:37:41,290 - INFO - Best Individual Found: Individual(fitness=7.1229e-04, genotype=[0.002 0.   ])
+2025-05-13 06:37:41,290 - INFO - Distance from Origin (Global Optimum): 1.8948e-03
+2025-05-13 06:37:41,290 - INFO - Elapsed Time: 1.83 seconds
+2025-05-13 06:37:41,290 - INFO - Run ended at 2025-05-13 06:37:41
+2025-05-13 06:37:41,290 - INFO - Total Elapsed Time: 1.83 seconds
+2025-05-13 06:37:41,290 - INFO - ========================================
