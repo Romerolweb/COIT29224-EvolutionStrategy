@@ -269,8 +269,13 @@ The random seed had a more pronounced effect on the final results than the selec
 
 **Comparison Graph**
 
-Include a comparison graph here.  
-convergence\_A1.png, convergence\_A8.png, convergence\_B1.png, convergence\_B8.png
+Below is a comparison of convergence curves for representative runs:
+
+| (μ, λ) - Good Seed (A1) | (μ, λ) - Poor Seed (A8) | (μ + λ) - Good Seed (B1) | (μ + λ) - Poor Seed (B8) |
+|:-----------------------:|:-----------------------:|:------------------------:|:------------------------:|
+| ![A1 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A1.png) | ![A8 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A8.png) | ![B1 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B1.png) | ![B8 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B8.png) |
+
+These plots show that both strategies can reach the global optimum with favorable seeds (A1, B1), but may converge to local optima with less favorable seeds (A8, B8).
 
 ### **5.4 Visualization of Convergence and Landscape**
 
@@ -278,15 +283,25 @@ The following figures illustrate the convergence behavior and final solution for
 
 **Strategy A: (μ, λ)**
 
-The first row shows results for the (μ, λ) strategy.
+| Convergence (A1) | Landscape (A1) |
+|:----------------:|:--------------:|
+| ![A1 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A1.png) | ![A1 Landscape](plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A1.png) |
 
-The second row shows results for a different run of the (μ, λ) strategy.
+| Convergence (A8) | Landscape (A8) |
+|:----------------:|:--------------:|
+| ![A8 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A8.png) | ![A8 Landscape](plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A8.png) |
 
-**Strategy B: (μ \+ λ)**
+**Strategy B: (μ + λ)**
 
-The first row shows results for the (μ \+ λ) strategy.
+| Convergence (B1) | Landscape (B1) |
+|:----------------:|:--------------:|
+| ![B1 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B1.png) | ![B1 Landscape](plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B1.png) |
 
-The second row shows results for a different run of the (μ \+ λ) strategy.
+| Convergence (B8) | Landscape (B8) |
+|:----------------:|:--------------:|
+| ![B8 Convergence](plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B8.png) | ![B8 Landscape](plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B8.png) |
+
+These visualizations highlight the variability in convergence and solution quality due to both the selection strategy and the random seed.
 
 ## **6\. Conclusion**
 
@@ -308,8 +323,11 @@ Future work should include a greater number of independent runs for each configu
 ### 8.1 Full Logs
 Below are the logs from all runs:
 
-[Log file](es_optimization_A1.log)
-(Note, the logs are too long to include in full here, but they can be found in the provided file. Numerous executions were performed, though, they are not included here, as the report should be readable for a general audience. Additional executions are indentified by UUIDs, and their generated plots are included in the plots folder. Furthermore, the logs will be located in a diferent folder named plots, and UUIDs will serve as a way to math the generated plots with the respective log.)
+folder: [Logs](https://github.com/Romerolweb/COIT29224-EvolutionStrategy/tree/main/logs)
+
+
+[First Generated Log file](es_optimization_A1.log)
+(Note, the logs are too long to include in full here, but they can be found in the provided file. Numerous executions were performed, though, they are not included here, as the report should be readable for a general audience. Additional executions are indentified by UUIDs, and their generated plots are included in the plots folder. Furthermore, the logs will be located in a diferent folder named plots, and UUIDs will serve as a way to match the generated plots with the respective log.)
 
 ## Author
 
