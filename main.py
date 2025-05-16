@@ -6,12 +6,12 @@ import uuid  # For generating batch UUID
 import numpy as np
 from es_optimiser.evolution_strategy import EvolutionStrategy
 from es_optimiser.objective_functions import rastrigin
-from es_optimiser.plot import plot_convergence, plot_rastrigin_2d_landscape
+from es_optimiser.plot import PLOTS_DIR, plot_convergence, plot_rastrigin_2d_landscape
 
 # === BATCH SETUP ===
 # Generate a unique batch ID for this execution (UUID4)
 BATCH_ID = str(uuid.uuid4())
-PLOTS_BATCH_DIR =  BATCH_ID
+PLOTS_BATCH_DIR = os.path.join(PLOTS_DIR, BATCH_ID)
 os.makedirs(PLOTS_BATCH_DIR, exist_ok=True)
 
 # Configure logging: log file is named with the batch ID

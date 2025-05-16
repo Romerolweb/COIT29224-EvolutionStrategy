@@ -1,0 +1,243 @@
+2025-05-16 02:45:41,785 - INFO - ========== BATCH ID: 6e93dd33-88cb-4382-a962-b907568a327a ==========
+2025-05-16 02:45:41,785 - INFO - Batch started at 2025-05-16 02:45:41
+2025-05-16 02:45:41,785 - INFO - Plots directory: plots/6e93dd33-88cb-4382-a962-b907568a327a
+2025-05-16 02:45:41,785 - INFO - ========================================
+2025-05-16 02:45:41,785 - INFO - Run ID: A1 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:45:41,785 - INFO - Run started at 2025-05-16 02:45:41
+2025-05-16 02:45:41,785 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:45:41,786 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:45:41,786 - INFO - RANDOM_SEED: 123
+2025-05-16 02:45:43,964 - INFO - Optimization completed successfully.
+2025-05-16 02:45:43,964 - INFO - Best Individual Found: Individual(fitness=7.5433e-05, genotype=[-0.001  0.   ])
+2025-05-16 02:45:43,964 - INFO - Distance from Origin (Global Optimum): 6.1662e-04
+2025-05-16 02:45:43,964 - INFO - Elapsed Time: 2.18 seconds
+2025-05-16 02:45:44,608 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A1.png
+2025-05-16 02:45:45,276 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A1.png
+2025-05-16 02:45:45,276 - INFO - Run ended at 2025-05-16 02:45:45
+2025-05-16 02:45:45,276 - INFO - Total Elapsed Time: 2.18 seconds
+2025-05-16 02:45:45,276 - INFO - ========================================
+2025-05-16 02:45:45,276 - INFO - ========================================
+2025-05-16 02:45:45,276 - INFO - Run ID: A2 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:45:45,276 - INFO - Run started at 2025-05-16 02:45:45
+2025-05-16 02:45:45,277 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:45:45,277 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:45:45,277 - INFO - RANDOM_SEED: 332
+2025-05-16 02:45:47,298 - INFO - Optimization completed successfully.
+2025-05-16 02:45:47,298 - INFO - Best Individual Found: Individual(fitness=9.9502e-01, genotype=[0.995 0.   ])
+2025-05-16 02:45:47,298 - INFO - Distance from Origin (Global Optimum): 9.9537e-01
+2025-05-16 02:45:47,298 - INFO - Elapsed Time: 2.02 seconds
+2025-05-16 02:45:47,438 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A2.png
+2025-05-16 02:45:48,022 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A2.png
+2025-05-16 02:45:48,022 - INFO - Run ended at 2025-05-16 02:45:48
+2025-05-16 02:45:48,022 - INFO - Total Elapsed Time: 2.02 seconds
+2025-05-16 02:45:48,022 - INFO - ========================================
+2025-05-16 02:45:48,022 - INFO - ========================================
+2025-05-16 02:45:48,022 - INFO - Run ID: A3 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:45:48,022 - INFO - Run started at 2025-05-16 02:45:48
+2025-05-16 02:45:48,022 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:45:48,022 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:45:48,022 - INFO - RANDOM_SEED: 456
+2025-05-16 02:45:50,001 - INFO - Optimization completed successfully.
+2025-05-16 02:45:50,002 - INFO - Best Individual Found: Individual(fitness=7.5162e-05, genotype=[ 0.001 -0.   ])
+2025-05-16 02:45:50,002 - INFO - Distance from Origin (Global Optimum): 6.1551e-04
+2025-05-16 02:45:50,002 - INFO - Elapsed Time: 1.98 seconds
+2025-05-16 02:45:50,449 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A3.png
+2025-05-16 02:45:51,083 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A3.png
+2025-05-16 02:45:51,084 - INFO - Run ended at 2025-05-16 02:45:51
+2025-05-16 02:45:51,084 - INFO - Total Elapsed Time: 1.98 seconds
+2025-05-16 02:45:51,084 - INFO - ========================================
+2025-05-16 02:45:51,084 - INFO - ========================================
+2025-05-16 02:45:51,084 - INFO - Run ID: A4 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:45:51,085 - INFO - Run started at 2025-05-16 02:45:51
+2025-05-16 02:45:51,085 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:45:51,085 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:45:51,085 - INFO - RANDOM_SEED: 789
+2025-05-16 02:45:52,880 - INFO - Optimization completed successfully.
+2025-05-16 02:45:52,881 - INFO - Best Individual Found: Individual(fitness=6.0822e-05, genotype=[-0.  0.])
+2025-05-16 02:45:52,881 - INFO - Distance from Origin (Global Optimum): 5.5369e-04
+2025-05-16 02:45:52,881 - INFO - Elapsed Time: 1.80 seconds
+2025-05-16 02:45:53,444 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A4.png
+2025-05-16 02:45:54,067 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A4.png
+2025-05-16 02:45:54,067 - INFO - Run ended at 2025-05-16 02:45:54
+2025-05-16 02:45:54,067 - INFO - Total Elapsed Time: 1.80 seconds
+2025-05-16 02:45:54,067 - INFO - ========================================
+2025-05-16 02:45:54,067 - INFO - ========================================
+2025-05-16 02:45:54,067 - INFO - Run ID: A5 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:45:54,067 - INFO - Run started at 2025-05-16 02:45:54
+2025-05-16 02:45:54,068 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:45:54,068 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:45:54,068 - INFO - RANDOM_SEED: 101
+2025-05-16 02:45:55,882 - INFO - Optimization completed successfully.
+2025-05-16 02:45:55,883 - INFO - Best Individual Found: Individual(fitness=8.7467e-01, genotype=[0.033 0.058])
+2025-05-16 02:45:55,883 - INFO - Distance from Origin (Global Optimum): 6.6708e-02
+2025-05-16 02:45:55,883 - INFO - Elapsed Time: 1.81 seconds
+2025-05-16 02:45:56,050 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A5.png
+2025-05-16 02:45:56,838 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A5.png
+2025-05-16 02:45:56,838 - INFO - Run ended at 2025-05-16 02:45:56
+2025-05-16 02:45:56,838 - INFO - Total Elapsed Time: 1.81 seconds
+2025-05-16 02:45:56,838 - INFO - ========================================
+2025-05-16 02:45:56,838 - INFO - ========================================
+2025-05-16 02:45:56,838 - INFO - Run ID: A6 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:45:56,838 - INFO - Run started at 2025-05-16 02:45:56
+2025-05-16 02:45:56,838 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:45:56,838 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:45:56,838 - INFO - RANDOM_SEED: 202
+2025-05-16 02:45:58,700 - INFO - Optimization completed successfully.
+2025-05-16 02:45:58,700 - INFO - Best Individual Found: Individual(fitness=9.3981e-06, genotype=[0. 0.])
+2025-05-16 02:45:58,700 - INFO - Distance from Origin (Global Optimum): 2.1765e-04
+2025-05-16 02:45:58,700 - INFO - Elapsed Time: 1.86 seconds
+2025-05-16 02:45:59,203 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A6.png
+2025-05-16 02:45:59,887 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A6.png
+2025-05-16 02:45:59,887 - INFO - Run ended at 2025-05-16 02:45:59
+2025-05-16 02:45:59,888 - INFO - Total Elapsed Time: 1.86 seconds
+2025-05-16 02:45:59,888 - INFO - ========================================
+2025-05-16 02:45:59,888 - INFO - ========================================
+2025-05-16 02:45:59,888 - INFO - Run ID: A7 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:45:59,889 - INFO - Run started at 2025-05-16 02:45:59
+2025-05-16 02:45:59,889 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:45:59,889 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:45:59,889 - INFO - RANDOM_SEED: 303
+2025-05-16 02:46:01,778 - INFO - Optimization completed successfully.
+2025-05-16 02:46:01,778 - INFO - Best Individual Found: Individual(fitness=9.9688e-01, genotype=[0.996 0.003])
+2025-05-16 02:46:01,779 - INFO - Distance from Origin (Global Optimum): 9.9609e-01
+2025-05-16 02:46:01,779 - INFO - Elapsed Time: 1.89 seconds
+2025-05-16 02:46:01,965 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A7.png
+2025-05-16 02:46:02,560 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A7.png
+2025-05-16 02:46:02,560 - INFO - Run ended at 2025-05-16 02:46:02
+2025-05-16 02:46:02,560 - INFO - Total Elapsed Time: 1.89 seconds
+2025-05-16 02:46:02,560 - INFO - ========================================
+2025-05-16 02:46:02,561 - INFO - ========================================
+2025-05-16 02:46:02,561 - INFO - Run ID: A8 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:02,561 - INFO - Run started at 2025-05-16 02:46:02
+2025-05-16 02:46:02,561 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:02,561 - INFO - SELECTION_STRATEGY: (mu, lambda)
+2025-05-16 02:46:02,561 - INFO - RANDOM_SEED: 404
+2025-05-16 02:46:04,427 - INFO - Optimization completed successfully.
+2025-05-16 02:46:04,427 - INFO - Best Individual Found: Individual(fitness=1.9902e+00, genotype=[-0.995 -0.994])
+2025-05-16 02:46:04,427 - INFO - Distance from Origin (Global Optimum): 1.4066e+00
+2025-05-16 02:46:04,427 - INFO - Elapsed Time: 1.87 seconds
+2025-05-16 02:46:04,566 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_A8.png
+2025-05-16 02:46:05,186 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_A8.png
+2025-05-16 02:46:05,186 - INFO - Run ended at 2025-05-16 02:46:05
+2025-05-16 02:46:05,186 - INFO - Total Elapsed Time: 1.87 seconds
+2025-05-16 02:46:05,186 - INFO - ========================================
+2025-05-16 02:46:05,187 - INFO - ========================================
+2025-05-16 02:46:05,187 - INFO - Run ID: B1 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:05,187 - INFO - Run started at 2025-05-16 02:46:05
+2025-05-16 02:46:05,187 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:05,187 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:05,188 - INFO - RANDOM_SEED: 123
+2025-05-16 02:46:07,275 - INFO - Optimization completed successfully.
+2025-05-16 02:46:07,275 - INFO - Best Individual Found: Individual(fitness=3.8255e-05, genotype=[-0. -0.])
+2025-05-16 02:46:07,276 - INFO - Distance from Origin (Global Optimum): 4.3912e-04
+2025-05-16 02:46:07,276 - INFO - Elapsed Time: 2.09 seconds
+2025-05-16 02:46:07,712 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B1.png
+2025-05-16 02:46:08,338 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B1.png
+2025-05-16 02:46:08,338 - INFO - Run ended at 2025-05-16 02:46:08
+2025-05-16 02:46:08,338 - INFO - Total Elapsed Time: 2.09 seconds
+2025-05-16 02:46:08,338 - INFO - ========================================
+2025-05-16 02:46:08,338 - INFO - ========================================
+2025-05-16 02:46:08,338 - INFO - Run ID: B2 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:08,338 - INFO - Run started at 2025-05-16 02:46:08
+2025-05-16 02:46:08,338 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:08,339 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:08,339 - INFO - RANDOM_SEED: 332
+2025-05-16 02:46:10,213 - INFO - Optimization completed successfully.
+2025-05-16 02:46:10,214 - INFO - Best Individual Found: Individual(fitness=9.9507e-01, genotype=[0.995 0.001])
+2025-05-16 02:46:10,214 - INFO - Distance from Origin (Global Optimum): 9.9522e-01
+2025-05-16 02:46:10,214 - INFO - Elapsed Time: 1.87 seconds
+2025-05-16 02:46:10,349 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B2.png
+2025-05-16 02:46:11,014 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B2.png
+2025-05-16 02:46:11,015 - INFO - Run ended at 2025-05-16 02:46:11
+2025-05-16 02:46:11,015 - INFO - Total Elapsed Time: 1.87 seconds
+2025-05-16 02:46:11,015 - INFO - ========================================
+2025-05-16 02:46:11,015 - INFO - ========================================
+2025-05-16 02:46:11,015 - INFO - Run ID: B3 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:11,015 - INFO - Run started at 2025-05-16 02:46:11
+2025-05-16 02:46:11,015 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:11,015 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:11,015 - INFO - RANDOM_SEED: 456
+2025-05-16 02:46:12,906 - INFO - Optimization completed successfully.
+2025-05-16 02:46:12,907 - INFO - Best Individual Found: Individual(fitness=6.5871e-05, genotype=[-0. -0.])
+2025-05-16 02:46:12,907 - INFO - Distance from Origin (Global Optimum): 5.7622e-04
+2025-05-16 02:46:12,907 - INFO - Elapsed Time: 1.89 seconds
+2025-05-16 02:46:13,339 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B3.png
+2025-05-16 02:46:13,989 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B3.png
+2025-05-16 02:46:13,990 - INFO - Run ended at 2025-05-16 02:46:13
+2025-05-16 02:46:13,990 - INFO - Total Elapsed Time: 1.89 seconds
+2025-05-16 02:46:13,990 - INFO - ========================================
+2025-05-16 02:46:13,990 - INFO - ========================================
+2025-05-16 02:46:13,990 - INFO - Run ID: B4 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:13,990 - INFO - Run started at 2025-05-16 02:46:13
+2025-05-16 02:46:13,991 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:13,991 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:13,991 - INFO - RANDOM_SEED: 789
+2025-05-16 02:46:15,778 - INFO - Optimization completed successfully.
+2025-05-16 02:46:15,779 - INFO - Best Individual Found: Individual(fitness=7.1229e-04, genotype=[0.002 0.   ])
+2025-05-16 02:46:15,779 - INFO - Distance from Origin (Global Optimum): 1.8948e-03
+2025-05-16 02:46:15,779 - INFO - Elapsed Time: 1.79 seconds
+2025-05-16 02:46:16,360 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B4.png
+2025-05-16 02:46:17,165 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B4.png
+2025-05-16 02:46:17,165 - INFO - Run ended at 2025-05-16 02:46:17
+2025-05-16 02:46:17,165 - INFO - Total Elapsed Time: 1.79 seconds
+2025-05-16 02:46:17,165 - INFO - ========================================
+2025-05-16 02:46:17,165 - INFO - ========================================
+2025-05-16 02:46:17,165 - INFO - Run ID: B5 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:17,165 - INFO - Run started at 2025-05-16 02:46:17
+2025-05-16 02:46:17,165 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:17,166 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:17,166 - INFO - RANDOM_SEED: 101
+2025-05-16 02:46:19,025 - INFO - Optimization completed successfully.
+2025-05-16 02:46:19,026 - INFO - Best Individual Found: Individual(fitness=9.9502e-01, genotype=[-0.995 -0.   ])
+2025-05-16 02:46:19,026 - INFO - Distance from Origin (Global Optimum): 9.9516e-01
+2025-05-16 02:46:19,026 - INFO - Elapsed Time: 1.86 seconds
+2025-05-16 02:46:19,169 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B5.png
+2025-05-16 02:46:19,761 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B5.png
+2025-05-16 02:46:19,761 - INFO - Run ended at 2025-05-16 02:46:19
+2025-05-16 02:46:19,761 - INFO - Total Elapsed Time: 1.86 seconds
+2025-05-16 02:46:19,762 - INFO - ========================================
+2025-05-16 02:46:19,762 - INFO - ========================================
+2025-05-16 02:46:19,762 - INFO - Run ID: B6 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:19,762 - INFO - Run started at 2025-05-16 02:46:19
+2025-05-16 02:46:19,762 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:19,762 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:19,762 - INFO - RANDOM_SEED: 202
+2025-05-16 02:46:21,743 - INFO - Optimization completed successfully.
+2025-05-16 02:46:21,744 - INFO - Best Individual Found: Individual(fitness=4.0219e-05, genotype=[0. 0.])
+2025-05-16 02:46:21,744 - INFO - Distance from Origin (Global Optimum): 4.5025e-04
+2025-05-16 02:46:21,744 - INFO - Elapsed Time: 1.98 seconds
+2025-05-16 02:46:22,212 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B6.png
+2025-05-16 02:46:22,836 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B6.png
+2025-05-16 02:46:22,836 - INFO - Run ended at 2025-05-16 02:46:22
+2025-05-16 02:46:22,836 - INFO - Total Elapsed Time: 1.98 seconds
+2025-05-16 02:46:22,836 - INFO - ========================================
+2025-05-16 02:46:22,837 - INFO - ========================================
+2025-05-16 02:46:22,837 - INFO - Run ID: B7 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:22,837 - INFO - Run started at 2025-05-16 02:46:22
+2025-05-16 02:46:22,837 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:22,837 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:22,837 - INFO - RANDOM_SEED: 303
+2025-05-16 02:46:24,728 - INFO - Optimization completed successfully.
+2025-05-16 02:46:24,728 - INFO - Best Individual Found: Individual(fitness=1.9901e+00, genotype=[0.994 0.995])
+2025-05-16 02:46:24,728 - INFO - Distance from Origin (Global Optimum): 1.4064e+00
+2025-05-16 02:46:24,728 - INFO - Elapsed Time: 1.89 seconds
+2025-05-16 02:46:24,898 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B7.png
+2025-05-16 02:46:25,645 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B7.png
+2025-05-16 02:46:25,645 - INFO - Run ended at 2025-05-16 02:46:25
+2025-05-16 02:46:25,645 - INFO - Total Elapsed Time: 1.89 seconds
+2025-05-16 02:46:25,645 - INFO - ========================================
+2025-05-16 02:46:25,645 - INFO - ========================================
+2025-05-16 02:46:25,646 - INFO - Run ID: B8 (Batch: 6e93dd33-88cb-4382-a962-b907568a327a)
+2025-05-16 02:46:25,646 - INFO - Run started at 2025-05-16 02:46:25
+2025-05-16 02:46:25,646 - INFO - Starting ES Optimization with the following configuration:
+2025-05-16 02:46:25,646 - INFO - SELECTION_STRATEGY: (mu + lambda)
+2025-05-16 02:46:25,646 - INFO - RANDOM_SEED: 404
+2025-05-16 02:46:27,996 - INFO - Optimization completed successfully.
+2025-05-16 02:46:27,996 - INFO - Best Individual Found: Individual(fitness=1.9903e+00, genotype=[-0.995 -0.996])
+2025-05-16 02:46:27,996 - INFO - Distance from Origin (Global Optimum): 1.4082e+00
+2025-05-16 02:46:27,997 - INFO - Elapsed Time: 2.35 seconds
+2025-05-16 02:46:28,146 - INFO - Convergence plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/convergence_B8.png
+2025-05-16 02:46:28,789 - INFO - 2D landscape plot saved: plots/6e93dd33-88cb-4382-a962-b907568a327a/landscape_B8.png
+2025-05-16 02:46:28,789 - INFO - Run ended at 2025-05-16 02:46:28
+2025-05-16 02:46:28,789 - INFO - Total Elapsed Time: 2.35 seconds
+2025-05-16 02:46:28,790 - INFO - ========================================

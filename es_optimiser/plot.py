@@ -41,7 +41,7 @@ def plot_convergence(history: List[Tuple[int, float]], title: Optional[str] = No
     plt.grid(True, which='both', linestyle='--', linewidth=0.5)
     plt.tight_layout()
     if filename:
-        plt.savefig(os.path.join("../", PLOTS_DIR, filename))
+        plt.savefig(filename)
     plt.close()
 
 def plot_rastrigin_2d_landscape(bounds: Tuple[float, float] = (-5.12, 5.12),
@@ -76,7 +76,7 @@ def plot_rastrigin_2d_landscape(bounds: Tuple[float, float] = (-5.12, 5.12),
         plt.plot(best_solution[0], best_solution[1], 'y*', markersize=12, markeredgewidth=1.5, label=f'ES Best Solution ({best_solution[0]:.2f}, {best_solution[1]:.2f})')
     plt.legend()
     if filename:
-        plt.savefig(os.path.join(PLOTS_DIR, filename))
+        plt.savefig(filename)
     plt.close()
 
 # Placeholder for future plot types (e.g., overall performance, boxplots, etc.)
