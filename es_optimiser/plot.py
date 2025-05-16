@@ -41,7 +41,7 @@ def plot_convergence(history: List[Tuple[int, float]], title: Optional[str] = No
     plt.grid(True, which='both', linestyle='--', linewidth=0.5)
     plt.tight_layout()
     if filename:
-        plt.savefig(os.path.join(PLOTS_DIR, filename))
+        plt.savefig(os.path.join("../", PLOTS_DIR, filename))
     plt.close()
 
 def plot_rastrigin_2d_landscape(bounds: Tuple[float, float] = (-5.12, 5.12),
