@@ -3,6 +3,10 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-GPL-yellow.svg)](https://opensource.org/licenses/GPL) 
 
+## Report
+
+For detailed explanations, methodology, and results, see the [project report](./report.md).
+
 ## Overview
 
 This repository provides a Python implementation of an **Evolution Strategy (ES)** algorithm tailored for optimizing **multi-modal objective functions**. The core objective is to effectively navigate complex search landscapes with numerous local optima to locate the global optimum.
