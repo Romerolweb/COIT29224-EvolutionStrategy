@@ -1,129 +1,133 @@
 # COIT29224 Evolution Strategy Optimizer
 
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-GPL-yellow.svg)](https://opensource.org/licenses/GPL) 
-
-## Report
-
-For detailed explanations, methodology, and results, see the [project report](./report.md).
+[![License: GPL](https://img.shields.io/badge/License-GPL-yellow.svg)](https://opensource.org/licenses/GPL) 
 
 ## Overview
 
-This repository provides a Python implementation of an **Evolution Strategy (ES)** algorithm tailored for optimizing **multi-modal objective functions**. The core objective is to effectively navigate complex search landscapes with numerous local optima to locate the global optimum.
+This repository provides a modular Python implementation of an **Evolution Strategy (ES)** algorithm for optimizing complex, multi-modal objective functions. The project is designed for **Assignment 2** of the COIT29224 Evolutionary Computation course at CQUniversity, and demonstrates key ES concepts including:
+- Population-based stochastic search
+- Variation through Gaussian mutation
+- Configurable survival selection: **(μ, λ)** and **(μ + λ)**
 
-Developed for **Assignment 2** of the **COIT29224 Evolutionary Computation** course at CQUniversity, this project demonstrates key ES concepts including:
-*   Population-based stochastic search.
-*   Variation through Gaussian mutation.
-*   Configurable survival selection mechanisms: **(μ, λ)** and **(μ + λ)**.
-
-The implementation prioritizes **clarity**, **modularity**, **robust documentation** (docstrings and type hints), and ease of **configuration**.
+The codebase emphasizes clarity, extensibility, and robust documentation.
 
 ## Key Features
 
-*   Modular implementation using Python classes (`EvolutionStrategyClarified`, `Individual`).
-*   Supports both **(μ, λ)** [comma] and **(μ + λ)** [plus] survival selection strategies.
-*   Employs **Gaussian mutation** with configurable strength (`sigma`) for exploration.
-*   Includes **boundary handling** via simple clipping to maintain solutions within specified constraints.
-*   Features the **Rastrigin function** as a primary multi-modal benchmark example.
-*   Easily extensible to include other objective functions.
-*   Generates **convergence plots** (Best Fitness vs. Generation) using Matplotlib.
-*   Provides optional **2D landscape visualization** for 2-dimensional problems.
-*   Adheres to Python best practices for documentation and code organization.
+- **Modular OOP Design:** Core logic is encapsulated in `EvolutionStrategy` and `Individual` classes.
+- **Selection Strategies:** Supports both **(μ, λ)** (comma) and **(μ + λ)** (plus) survivor selection.
+- **Gaussian Mutation:** Configurable mutation strength (`sigma`) for exploration.
+- **Boundary Handling:** Solutions are clipped to remain within user-specified bounds.
+- **Benchmark Functions:** Includes the Rastrigin function; easily extensible for others.
+- **Visualization:** Generates convergence plots and, for 2D problems, a landscape plot showing the best solution.
+- **Logging:** Each run is logged with a unique batch ID, and plots are saved in batch-specific folders.
+- **Reproducibility:** Supports random seeds for repeatable experiments.
+- **Extensible:** Add new objective functions by editing a single file.
 
 ## Project Structure
 
 ```
 .
-├── es_optimiser/             # Main Python package for the ES logic
-│   ├── __init__.py           # Initializes the package
-│   ├── objective_functions.py# Defines fitness functions (e.g., Rastrigin)
-│   ├── evolution_strategy_clarified.py # Contains the ES algorithm classes
-│   └── utils.py              # Utility functions (plotting, etc.)
-├── .gitignore                # Standard Git ignore file for Python projects
-├── README.md                 # This documentation file
-└── main.py                   # Example execution script to run the optimizer
+├── LICENSE                         # Project license (GPL)
+├── README.md                       # This documentation file
+├── es_optimiser/                   # Main Python package for ES logic
+│   ├── __init__.py                 # Package initializer
+│   ├── __pycache__/                # Python bytecode cache
+│   ├── evolution_strategy.py       # ES algorithm implementation
+│   ├── objective_functions.py      # Fitness/objective functions (e.g., Rastrigin)
+│   └── plot.py                     # Plotting utilities
+├── logs/                           # Output logs directory
+├── main.py                         # Main script to run the optimizer
+├── plan-to-develop.md              # Future development notes
+├── requirements.txt                # Python package dependencies
+├── plots/                          # Output plots directory
+│   ├── <batch_id>/                 # Run-specific plots
+│   └── plots.md                    # Plot documentation/notes
+└── report.md                       # Project report
 ```
 
-## Installation Requirements
+[See ES Algorithm Flowchart (diagram.md)](diagram.md)
 
-*   Python 3.8 or newer
-*   NumPy
-*   Matplotlib
 
-### Steps:
+## Installation
 
-1.  **Clone the repository:**
+**Requirements:**
+- Python 3.8 or newer
+- NumPy
+- Matplotlib
+
+**Setup:**
+1. Clone the repository:
     ```bash
-    git clone github.com/Romerolweb/COIT29224-EvolutionStrategy
+    git clone https://github.com/Romerolweb/COIT29224-EvolutionStrategy.git
     cd COIT29224-EvolutionStrategy
     ```
-2.  **Create and activate a virtual environment (Recommended):**
+2. (Recommended) Create and activate a virtual environment:
     ```bash
-    # Create environment
     python -m venv venv
-
-    # Activate environment
-    # Linux/macOS:
-    source venv/bin/activate
-    # Windows (Command Prompt/PowerShell):
-    .\venv\Scripts\activate
+    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
     ```
-
-3.  **Install required packages:**
+3. Install dependencies:
     ```bash
-    pip install numpy matplotlib
+    pip install -r requirements.txt
     ```
 
 ## How to Run
 
-Execute the main script from the root directory of the project:
-
+Run the main script from the project root:
 ```bash
 python main.py
 ```
-
-**Expected Output:**
-1.  The script will print the current ES configuration settings.
-2.  It will show progress updates during the optimization process.
-3.  Upon completion, it will print the best fitness value found and the corresponding solution vector.
-4.  A Matplotlib window will display the convergence plot (best fitness over generations).
-5.  If `PROBLEM_DIMENSIONS` in `main.py` is set to `2`, a second plot visualizing the 2D objective function landscape and the best found solution will appear.
+**What happens:**
+- The script prints the ES configuration and progress.
+- Upon completion, it prints the best solution found.
+- Convergence and (if 2D) landscape plots are saved in a batch-specific folder under `plots/`.
+- All run details are logged in the `logs/` directory.
 
 ## Configuration
 
-Adjust the parameters of the Evolution Strategy directly within the `main.py` script, primarily within the `if __name__ == "__main__":` block:
+Edit the parameters in `main.py` (inside the `run_es_optimization` function or the main block):
 
-*   `PROBLEM_DIMENSIONS`: Integer, sets the dimensionality of the search space.
-*   `SEARCH_BOUNDS`: Tuple `(min_bound, max_bound)` defining the limits for each variable.
-*   `POPULATION_MU`: Integer (`μ`), the number of parents selected each generation.
-*   `OFFSPRING_LAMBDA`: Integer (`λ`), the number of offspring generated each generation.
-*   `GENERATIONS`: Integer, the maximum number of generations the algorithm will run.
-*   `MUTATION_SIGMA`: Float, the standard deviation (`σ`) for Gaussian mutation, controlling step size.
-*   `SELECTION_STRATEGY`: String, either `'(mu, lambda)'` or `'(mu + lambda)'`.
-*   `RANDOM_SEED`: Integer or `None`, for reproducible results.
-*   `objective_function`: The function handle to optimize (e.g., `rastrigin`). Change this to use a different function.
+- `PROBLEM_DIMENSIONS`: Number of variables (int)
+- `SEARCH_BOUNDS`: Tuple of (min, max) for each variable
+- `POPULATION_MU`: Number of parents (μ)
+- `OFFSPRING_LAMBDA`: Number of offspring (λ)
+- `GENERATIONS`: Number of generations
+- `MUTATION_SIGMA`: Mutation strength (σ)
+- `SELECTION_STRATEGY`: `'(mu, lambda)'` or `'(mu + lambda)'`
+- `RANDOM_SEED`: Integer or `None`
+- `objective_function`: Function to optimize (e.g., `rastrigin`)
 
 ## Adding Objective Functions
 
-To add a new function to optimize:
-1.  Define the function in `es_optimiser/objective_functions.py`.
-2.  Ensure the function accepts a single argument: a **NumPy array** representing the candidate solution (`x`).
-3.  Ensure the function returns a single **float** value representing the fitness (lower is better for minimization).
-4.  Update the `objective_function` variable in `main.py` to point to your new function (e.g., `objective_function=my_new_function`).
+1. Define your function in `es_optimiser/objective_functions.py`:
+    ```python
+    def my_function(x: np.ndarray) -> float:
+        # Your implementation
+        return value
+    ```
+2. Update `main.py` to use your function:
+    ```python
+    from es_optimiser.objective_functions import my_function
+    # ...
+    es_optimizer = EvolutionStrategy(
+        objective_function=my_function,
+        # ...
+    )
+    ```
 
----
+
+## Output
+
+- **Logs:** Each run creates a log file in `logs/` with a unique batch ID.
+- **Plots:** Convergence and landscape plots are saved in `plots/<batch_id>/`.
+- **Console:** Progress and summary statistics are printed.
 
 ## License
 
-This project is an academic project. See license in ./LICENSE
+This project is for academic use. See [LICENSE](./LICENSE).
 
----
+## Author
 
-## Author Information
-
-*   **Author:** `Sebastian Romero Laguna`
-*   **Course:** COIT29224 Evolutionary Computation
-*   **Institution:** CQUniversity
-*   **Assignment:** Assignment 2, Term 1, 2025
-
----
+- **Sebastian Romero Laguna**
+- Orcid:
